@@ -46,8 +46,22 @@ kits.randomColor = function () {
   var b = this.random(0, 255);
   return 'rgb(' + r + ',' + g + ',' + b + ')';
 }
+// 4.随机产生十六进制的颜色值
 
-// 4.常见的给id的方式1
+kits.randomColor16 = function () {
+  var i = 0;
+  var str = "#";
+  var random = 0;
+  var aryNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+
+  for (i = 0; i < 6; i++) {
+    random = Math.floor((Math.random() * 16));
+    str += aryNum[random];
+  }
+  return str;
+};
+
+// 5.常见的给id的方式1
 // 当前时间戳 + 大的随机数
 kits.getId = function () {
   // 返回一个不容易重复的id
